@@ -1,12 +1,10 @@
 import React from "react";
+import DashboardLayout from "../layouts.jsx/DashboardLayout";
 
 function Landingpage() {
   return (
     <div>
-      <div className="aside">Sisebar</div>
-      <div className="header">heading</div>
-      <div className="main-area">messaging area</div>
-      <div className="footer">footer messeging side</div>
+      <DashboardLayout/>
     </div>
   );
 }
