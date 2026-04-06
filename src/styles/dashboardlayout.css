@@ -23,15 +23,32 @@ body{
     border-right: 1px solid #5E5E5E33;
     
   }
-  .logo-wrapper{
+  .search-bar{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    justify-content: center;
+  }
+  .search-bar input{
+    max-width: 284px;
+    min-height: 30px;
+    border-radius: 10px;
+  }
+  .search-bar button{
+    background-color: #00A3FF;
+    border: none;
+    border-radius: 8px;
+  }
+  .logo-wraper{
     display: flex;
     text-decoration: none;
     max-width: 145px;
     text-align: center;
     align-items: center;
     top: 24px;
-    left: 24px;
+    left: 404px;
     color: #00A3FF;
+    gap: 10px;
   }
   
   .header, .footer {
@@ -40,7 +57,20 @@ body{
     background: #FFFFFF;
     height: 90px;
     border: 1px solid #5E5E5E33;
-    
+    justify-content: center;
+    align-items: center;    
+  }
+  .header-nav{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .calls-tap{
+    display: flex;
+    gap: 10px;
   }
   
   .content-wrap {
@@ -55,3 +85,8 @@ body{
     color: #00A3FF;
   }
   
+  .message-area{
+    display: flex;
+    align-items: center;
+    
+  }
