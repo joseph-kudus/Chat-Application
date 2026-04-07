@@ -12,6 +12,7 @@ import {
   Video,
 } from "lucide-react";
 import SearchBox from "../component/SearchBox";
+import Header from "./Header";
 
 function DashboardLayout() {
   return (
@@ -25,16 +26,8 @@ function DashboardLayout() {
           <SearchBox />
         </aside>
         <div className="content-wrap">
-          <div className="header">
-            <div className="header-nav">
-              <div className="user-profile">Grace Miller</div>
-              <div className="calls-tap">
-                <Phone />
-                <Video />
-                <DotIcon />
-              </div>
-            </div>
-          </div>
+          {/*header here */}
+         <Header/>
           <main className="main">main content</main>
           <footer className="footer">
             <div className="footer-wraper">
