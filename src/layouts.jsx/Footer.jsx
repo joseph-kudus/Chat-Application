@@ -1,5 +1,9 @@
 import React from "react";
 import { CiFaceSmile } from "react-icons/ci";
+import { FaTelegramPlane } from "react-icons/fa";
+import { MdKeyboardVoice } from "react-icons/md";
+import { CgAttachment } from "react-icons/cg";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -11,9 +15,12 @@ const Footer = () => {
           <input type="text" placeholder="Type message" />
         </div>
         <div className="attach-area">
-          <i className="fa-solid fa-user"></i>
-          <p>Send</p>
-          <i class="fa-regular fa-user"></i>
+          <MdKeyboardVoice className="voice" />
+          <CgAttachment className="voice" />
+          <div className="sendmsg">
+            <span className="mui">Send</span>
+            <FaTelegramPlane className="mu"/>
+          </div>
         </div>
       </div>
     </footer>
