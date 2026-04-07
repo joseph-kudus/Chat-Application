@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBox from "../component/SearchBox";
+import SearchBox from "./SearchBox";
 import logohead from "../assets/Image/mingcute_chat-4-fill.png";
 const SideBar =()=> {
     return(

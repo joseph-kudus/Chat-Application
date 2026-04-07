@@ -11,7 +11,7 @@ const Footer = () => {
           <input type="text" placeholder="Type message" />
         </div>
         <div className="attach-area">
-          <i class="fa-solid fa-user"></i>
+          <i className="fa-solid fa-user"></i>
           <p>Send</p>
           <i class="fa-regular fa-user"></i>
         </div>
