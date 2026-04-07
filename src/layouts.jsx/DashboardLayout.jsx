@@ -2,7 +2,16 @@ import React from "react";
 import "../styles/dashboardlayout.css";
 import logohead from "../assets/Image/mingcute_chat-4-fill.png";
 import { Link } from "react-router";
-import { DotIcon, Phone, PhoneCall, Plus, Search, SmileIcon, Video } from "lucide-react";
+import {
+  DotIcon,
+  Phone,
+  PhoneCall,
+  Plus,
+  Search,
+  SmileIcon,
+  Video,
+} from "lucide-react";
+import SearchBox from "../component/SearchBox";
 
 function DashboardLayout() {
   return (
@@ -13,15 +22,7 @@ function DashboardLayout() {
             <img src={logohead} alt="" />
             <span>Chatties</span>
           </div>
-          <div className="search-bar">
-            <Search />
-            <input type="text" placeholder="Search messages, people" />
-            <button>
-              <span>
-                <Plus className="bg-indigo-900" />
-              </span>
-            </button>
-          </div>
+          <SearchBox />
         </aside>
         <div className="content-wrap">
           <div className="header">
