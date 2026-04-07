@@ -1,100 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-body{
-    font-family: "Open Sans", sans-serif;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 .dashboardlayout {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    color: #000133;
-  }
-  
-  .container {
-    display: flex;
-    flex: 1;
-  }
-  
-  .drawer {
-    background: #FFFFFF;
-    width: 100%;
-    max-width: 390px;
-    border-right: 1px solid #5E5E5E33;
-    
-  }
-  .SearchBox{
-    background: #FFFFFF;
-    max-width: 400px;
-    height: 50px; 
-    padding: 6px;
-    display: flex;
-    align-items: center;
-    padding: 3px 15px;
-    justify-content: center;
-  }
-  .SearchBox input{
-    background: transparent;
-    border: 0px;
-    outline: none;
-    padding-left: 5px;
-    font-size: 15px;
-    color: #00A3FF;
-  }
-  .SearchBox input::-webkit-input-placeholder{color: #00A3FF;}
-  
-  .SearchBox svg{
-    color: #00A3FF;
-    font-size: 18px;
-  }
-  .logo-wraper{
-    display: flex;
-    text-decoration: none;
-    max-width: 145px;
-    text-align: center;
-    align-items: center;
-    top: 24px;
-    left: 44px;
-    color: #00A3FF;
-    gap: 10px;
-  }
-  
-  .header, .footer {
-    width: 100%;
-    color: #00A3FF;
-    background: #FFFFFF;
-    height: 90px;
-    border: 1px solid #5E5E5E33;
-    justify-content: center;
-    align-items: center;    
-  }
-  .header-nav{
-    padding-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  .calls-tap{
-    display: flex;
-    gap: 10px;
-  }
-  
-  .content-wrap {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .main {
-    flex: 1;
-    background: #D9D9D9;
-    color: #00A3FF;
-  }
-  
-  .message-area{
-    display: flex;
-    align-items: center;
-    
-  }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #000133;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.drawer {
+  background: #ffffff;
+  width: 100%;
+  max-width: 390px;
+  border-right: 1px solid #5e5e5e33;
+}
+.SearchBox {
+  background: #ffffff;
+  max-width: 400px;
+  height: 50px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  padding: 3px 15px;
+  justify-content: center;
+}
+.SearchBox input {
+  background: transparent;
+  border: 0px;
+  outline: none;
+  padding-left: 5px;
+  font-size: 15px;
+  color: #00a3ff;
+}
+.SearchBox input::-webkit-input-placeholder {
+  color: #00a3ff;
+}
+
+.SearchBox svg {
+  color: #00a3ff;
+  font-size: 18px;
+}
+.SearchBox {
+  background: #ffffff;
+  max-width: 400px;
+  height: 50px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  padding: 3px 15px;
+  justify-content: center;
+}
+.SearchBox input {
+  background: transparent;
+  border: 0px;
+  outline: none;
+  padding-left: 5px;
+  font-size: 15px;
+  color: #00a3ff;
+}
+.SearchBox input::-webkit-input-placeholder {
+  color: #00a3ff;
+}
+
+.SearchBox svg {
+  color: #00a3ff;
+  font-size: 18px;
+}
+.logo-wraper {
+  display: flex;
+  text-decoration: none;
+  max-width: 145px;
+  text-align: center;
+  align-items: center;
+  top: 24px;
+  left: 44px;
+  color: #00a3ff;
+  gap: 10px;
+}
+
+.header,
+.footer {
+  width: 100%;
+  color: #00a3ff;
+  background: #ffffff;
+  height: 90px;
+  border: 1px solid #5e5e5e33;
+  justify-content: center;
+  align-items: center;
+}
+.message-area .input::-webkit-input-placeholder {
+  color: #00a3ff;
+}
+.header-nav {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.calls-tap {
+  display: flex;
+  gap: 10px;
+}
+
+.content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  background: #d9d9d9;
+  color: #00a3ff;
+}
+
+.message-area {
+  display: flex;
+  align-items: center;
+}
