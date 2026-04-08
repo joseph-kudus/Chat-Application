@@ -1,10 +1,9 @@
 import React from "react";
-import DashboardLayout from "../layouts.jsx/DashboardLayout";
 
 function Landingpage() {
   return (
     <div>
-      <DashboardLayout/>
+      <h1>Welcome to kudusChat app</h1>
     </div>
   );
 }

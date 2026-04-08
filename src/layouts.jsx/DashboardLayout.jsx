@@ -9,7 +9,9 @@ import Footer from "./Footer";
 
 function DashboardLayout() {
   return (
+    
     <div className="dashboardlayout">
+      
       <div className="container">
         {/*Sidebar section start */}
         <SideBar />
