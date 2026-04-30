@@ -1,21 +1,30 @@
 import React from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
-import Navbar from "./pages/Auth-folder/Navbar.jsx";
-import Landingpage from "./pages/Auth-folder/Landingpage.jsx";
-import Login from "./pages/Auth-folder/Login.jsx";
-import Signup from "./pages/Signup.jsx";
+import { Routes, Route } from "react-router-dom";
+import { UserProvider } from "./context/UserContext";
 
+import Signup from "./pages/Signup.jsx";
+import Login from "./pages/Login.jsx";
+import DashboardLayout from "./layouts/DashboardLayout.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 function App() {
   return (
-    <div className="md-4 color-red bg-indigo-700 text-3xl underline">
-      <Navbar />
+    <UserProvider>
       <Routes>
-        <Route path="/" element={<Landingpage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Protected dashboard */}
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <DashboardLayout />
+            </PrivateRoute>
+          }
+        />
       </Routes>
-    </div>
+    </UserProvider>
   );
 }
 

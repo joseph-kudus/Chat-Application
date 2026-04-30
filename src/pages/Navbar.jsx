@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import "../../styles/App.css";
+import "../styles/App.css";
 import { BiLogOutCircle } from "react-icons/bi";
 
 function Navbar() {

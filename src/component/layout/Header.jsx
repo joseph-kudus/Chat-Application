@@ -1,11 +1,23 @@
 import React from "react";
-import "../styles/dashboardlayout.css";
+import { useUser } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
+import "../../styles/dashboardlayout.css";
 import { FaPhone } from "react-icons/fa6";
 import { IoVideocamOutline } from "react-icons/io5";
 import { HiDotsVertical } from "react-icons/hi";
-import userpd from "../assets/Image/Ellipse 1.png";
-import kudus from "../assets/Image/20250821_160921.jpg";
+
 const Header = () => {
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
+
+  // This guard prevents the crash
+  if (!user) return null;
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <div className="header">
       <div className="header-nav">
@@ -13,12 +25,12 @@ const Header = () => {
           <div className="myacc">
             <div className="userimg">
               <span className="round-circle">
-                <img src={kudus} alt="userimg" />
+                <img src={user.avatar} alt={user.username} />
               </span>
             </div>
             <div className="userinfo">
-              <h4>Joseph Lukudu</h4>
-              <p>Online</p>
+              <h4>{user.username}</h4>
+              <p>{user.online ? "Online" : "Offline"}</p>
             </div>
           </div>
         </div>
@@ -26,10 +38,11 @@ const Header = () => {
         <div className="calls-tap">
           <FaPhone />
           <IoVideocamOutline />
-          <HiDotsVertical />
+          <HiDotsVertical onClick={handleLogout} title="Logout" />
         </div>
       </div>
     </div>
   );
 };
+
 export default Header;
