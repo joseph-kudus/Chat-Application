@@ -5,7 +5,7 @@ import { UserProvider } from "./context/UserContext";
 import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import DashboardLayout from "./layouts/DashboardLayout.jsx";
-import PrivateRoute from "./components/PrivateRoute.jsx";
+import PrivateRoute from "./component/PrivateRoute.jsx";
 
 function App() {
   return (
