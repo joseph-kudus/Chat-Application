@@ -1,22 +1,14 @@
 import React from "react";
-import { useUser } from "../../context/UserContext";
-import { useNavigate } from "react-router-dom";
 import "../../styles/dashboardlayout.css";
 import { FaPhone } from "react-icons/fa6";
 import { IoVideocamOutline } from "react-icons/io5";
 import { HiDotsVertical } from "react-icons/hi";
+import { useChat } from "../../context/ChatContext";
+import { useUser } from "../../context/UserContext";
 
 const Header = () => {
-  const { user, logout } = useUser();
-  const navigate = useNavigate();
-
-  // This guard prevents the crash
-  if (!user) return null;
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+  const { selectedUser } = useChat();
+  const { user } = useUser();
 
   return (
     <div className="header">
@@ -25,12 +17,12 @@ const Header = () => {
           <div className="myacc">
             <div className="userimg">
               <span className="round-circle">
-                <img src={user.avatar} alt={user.username} />
+                <img src={selectedUser?.avatar || user?.avatar} alt="userimg" />
               </span>
             </div>
             <div className="userinfo">
-              <h4>{user.username}</h4>
-              <p>{user.online ? "Online" : "Offline"}</p>
+              <h4>{selectedUser?.username || "Select a chat"}</h4>
+              <p>{selectedUser?.online ? "Online" : "Offline"}</p>
             </div>
           </div>
         </div>
@@ -38,7 +30,7 @@ const Header = () => {
         <div className="calls-tap">
           <FaPhone />
           <IoVideocamOutline />
-          <HiDotsVertical onClick={handleLogout} title="Logout" />
+          <HiDotsVertical />
         </div>
       </div>
     </div>
