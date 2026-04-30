@@ -12,7 +12,6 @@ function App() {
   return (
     <UserProvider>
       <ChatProvider>
-        {" "}
         {/* <- add this wrapper */}
         <Routes>
           <Route path="/login" element={<Login />} />

@@ -1,26 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { useChat } from "../../context/ChatContext";
 import { useUser } from "../../context/UserContext";
 import "../../styles/ChatWindow.css";
 
 function ChatWindow() {
-  const { messages, selectedUser, sendMessage } = useChat();
+  const { messages, selectedUser } = useChat();
   const { user } = useUser();
-  const [text, setText] = useState("");
   const messagesEndRef = useRef(null);
 
   // Auto scroll to bottom when new message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
-  const handleSend = (e) => {
-    e.preventDefault();
-    if (text.trim()) {
-      sendMessage(text);
-      setText("");
-    }
-  };
 
   if (!selectedUser) {
     return (
@@ -51,16 +42,6 @@ function ChatWindow() {
         ))}
         <div ref={messagesEndRef} />
       </div>
-
-      <form className="message-input" onSubmit={handleSend}>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Type a message..."
-        />
-        <button type="submit">Send</button>
-      </form>
     </div>
   );
 }

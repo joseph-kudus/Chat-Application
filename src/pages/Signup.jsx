@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
+
 import "../styles/Login.css";
 
 function Signup() {
   const [formData, setFormData] = useState({
-    username: "", 
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -56,27 +57,28 @@ function Signup() {
   };
 
   return (
-    <div>
-      <h1>Welcome to our chat-app</h1>
-      <p>Please signup to start exploring</p>
-      <div className="loginpage">
-        <form onSubmit={handleSignup}>
-          {error && <p className="error">{error}</p>}
+    <div className="auth-container">
+      <div className="auth-card">
+        <h1 className="auth-title">Welcome to KudusChat</h1>
+        <p className="auth-subtitle">Create an account to start chatting</p>
 
-          <label>
-            User Name:
+        <form onSubmit={handleSignup} className="auth-form">
+          {error && <div className="error-box">{error}</div>}
+
+          <div className="input-group">
+            <label>Username</label>
             <input
               type="text"
-              name="username" // <- changed
-              value={formData.username} // <- changed
+              name="username"
+              value={formData.username}
               onChange={handleChange}
-              placeholder="Enter username"
+              placeholder="Choose a username"
               required
             />
-          </label>
+          </div>
 
-          <label>
-            Email:
+          <div className="input-group">
+            <label>Email</label>
             <input
               type="email"
               name="email"
@@ -85,41 +87,38 @@ function Signup() {
               placeholder="Enter your email"
               required
             />
-          </label>
+          </div>
 
-          <label>
-            Password:
+          <div className="input-group">
+            <label>Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Password"
+              placeholder="Min 6 characters"
               required
             />
-          </label>
+          </div>
 
-          <label>
-            Confirm Password:
+          <div className="input-group">
+            <label>Confirm Password</label>
             <input
               type="password"
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              placeholder="Confirm your password"
+              placeholder="Re-enter password"
               required
             />
-          </label>
+          </div>
 
-          <button type="submit" className="onSubmit">
-            Signup
+          <button type="submit" className="auth-btn">
+            Sign Up
           </button>
 
-          <p>
-            If you already have an account{" "}
-            <span>
-              <Link to="/login">Login</Link>
-            </span>
+          <p className="auth-switch">
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </form>
       </div>

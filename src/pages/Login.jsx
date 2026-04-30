@@ -22,7 +22,6 @@ function Login() {
 
     const users = JSON.parse(localStorage.getItem("chatUsers") || "[]");
 
-    // Find user with matching email + password
     const foundUser = users.find(
       (u) => u.email === formData.email && u.password === formData.password,
     );
@@ -32,25 +31,24 @@ function Login() {
       return;
     }
 
-    // Update online status
     foundUser.online = true;
     localStorage.setItem("chatUsers", JSON.stringify(users));
 
-    // Log in and redirect
     login(foundUser);
     navigate("/");
   };
 
   return (
-    <div className="login-wrapper">
-      <h1>Welcome to our chat-app</h1>
-      <p>Please login to start exploring</p>
-      <div className="loginpage">
-        <form onSubmit={handleLogin}>
-          {error && <p className="error">{error}</p>}
+    <div className="auth-container">
+      <div className="auth-card">
+        <h1 className="auth-title">Welcome back</h1>
+        <p className="auth-subtitle">Login to continue chatting</p>
 
-          <label>
-            Email:
+        <form onSubmit={handleLogin} className="auth-form">
+          {error && <div className="error-box">{error}</div>}
+
+          <div className="input-group">
+            <label>Email</label>
             <input
               type="email"
               name="email"
@@ -59,33 +57,30 @@ function Login() {
               placeholder="Enter your email"
               required
             />
-          </label>
+          </div>
 
-          <label>
-            Password:
+          <div className="input-group">
+            <label>Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Password"
+              placeholder="Enter password"
               required
             />
-          </label>
+          </div>
 
-          <button type="submit" className="onSubmit">
+          <Link to="#" className="forgot-link">
+            Forgot Password?
+          </Link>
+
+          <button type="submit" className="auth-btn">
             Login
           </button>
 
-          <span>
-            <Link to="#">Forgot Password</Link>
-          </span>
-
-          <p>
-            If you don't have an account{" "}
-            <span>
-              <Link to="/signup">Create new Account</Link>
-            </span>
+          <p className="auth-switch">
+            Don't have an account? <Link to="/signup">Sign up</Link>
           </p>
         </form>
       </div>

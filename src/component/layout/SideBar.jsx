@@ -3,7 +3,7 @@ import { useChat } from "../../context/ChatContext";
 import { useUser } from "../../context/UserContext";
 import SearchBox from "./SearchBox";
 import logohead from "../../assets/Image/mingcute_chat-4-fill.png";
-
+import { BsFillPinAngleFill, BsPinAngleFill, BsPinMapFill } from "react-icons/bs";
 
 const SideBar = () => {
   const { allUsers, selectedUser, setSelectedUser } = useChat();
@@ -33,7 +33,15 @@ const SideBar = () => {
 
       {/* Users list */}
       <div className="users-list">
-        <h3>Chats</h3>
+        <div className="pinus">
+          <h3>
+            <span>
+              <BsFillPinAngleFill size={18} />
+            </span>
+            Pinned Chats
+          </h3>
+        </div>
+
         {allUsers.length === 0 ? (
           <p className="no-users">No other users yet</p>
         ) : (
