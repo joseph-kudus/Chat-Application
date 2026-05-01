@@ -1,10 +1,33 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebaseconfig";
 
 import "../styles/Login.css";
 
 function Signup() {
+  const [username, setUsername] = useState;
+  const [email, setEmail] = useState;
+  const [password, setPassword] = useState;
+  const [confirmpassword, setConfirmPassword] = useState;
+  const [msg, setMsg] = useState;
+  const [loading, setLoading] = useState;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMsg("");
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      setMsg("Your account is created, now login");
+    } catch (err) {
+      setMsg("err.message");
+    } finally {
+      loading(false)
+    }
+  };
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",

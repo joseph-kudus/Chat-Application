@@ -13,6 +13,7 @@ function App() {
     <UserProvider>
       <ChatProvider>
         {/* <- add this wrapper */}
+        <h1>hello wanny chat please login to enjoy</h1>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
